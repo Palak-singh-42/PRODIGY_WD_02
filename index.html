@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cool Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="toggleTheme" />
+      <span class="slider round"></span>
+    </label>
+    <span class="mode-label">☀️ / 🌙</span>
+  </div>
+
+  <div class="stopwatch-container">
+    <h1>⏱ Cool Stopwatch</h1>
+    <div class="display" id="display">00:00:00.00</div>
+    <div class="buttons">
+      <button onclick="startStop()">▶️ Start</button>
+      <button onclick="pause()">⏸️ Pause</button>
+      <button onclick="reset()">🔁 Reset</button>
+      <button onclick="lap()">🏁 Lap</button>
+    </div>
+    <ul id="laps" class="laps"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

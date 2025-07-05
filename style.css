@@ -1,0 +1,132 @@
+/* Global Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  transition: background 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.mode-label {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* Switch (Dark Mode Toggle) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #555;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Stopwatch Styling */
+.stopwatch-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 330px;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+.stopwatch-container.dark {
+  background: #222;
+  color: #f0f0f0;
+}
+
+.display {
+  font-size: 2.8rem;
+  margin: 20px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #007bff; }
+  to { text-shadow: 0 0 15px #007bff; }
+}
+
+.buttons button {
+  padding: 10px 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.laps {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.laps li {
+  background-color: #f1f1f1;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.dark .laps li {
+  background-color: #333;
+}
